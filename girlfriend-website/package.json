@@ -1,0 +1,25 @@
+{
+  "name": "girlfriend-website",
+  "version": "1.0.0",
+  "description": "A beautiful, interactive website created with love for Priyanshi",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "build": "echo 'Static site - no build required'",
+    "dev": "serve ."
+  },
+  "keywords": [
+    "love",
+    "romantic",
+    "website",
+    "diary",
+    "proposal"
+  ],
+  "author": "Harshal",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 

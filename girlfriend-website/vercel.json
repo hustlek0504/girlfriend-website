@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.html",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
@@ -12,8 +12,24 @@
       "dest": "/index.html"
     },
     {
+      "src": "/page1",
+      "dest": "/page1.html"
+    },
+    {
+      "src": "/page2", 
+      "dest": "/page2.html"
+    },
+    {
+      "src": "/page3",
+      "dest": "/page3.html"
+    },
+    {
+      "src": "/page4",
+      "dest": "/page4.html"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
   ],
   "headers": [
@@ -21,16 +37,8 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
