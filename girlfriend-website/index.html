@@ -4,8 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Girlfriend's Day, Priyanshi! 💕</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .welcome-page {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .welcome-content {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .welcome-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title-word {
+            display: inline-block;
+            animation: color-animation 4s linear infinite;
+        }
+
+        .title-word-1 {
+            --color-1: #ff6b9d;
+            --color-2: #ff8fab;
+            --color-3: #ffb3d1;
+        }
+
+        .title-word-2 {
+            --color-1: #ff8fab;
+            --color-2: #ffb3d1;
+            --color-3: #ff6b9d;
+        }
+
+        .title-word-3 {
+            --color-1: #ffb3d1;
+            --color-2: #ff6b9d;
+            --color-3: #ff8fab;
+        }
+
+        .title-word-4 {
+            --color-1: #ff6b9d;
+            --color-2: #ffb3d1;
+            --color-3: #ff8fab;
+        }
+
+        @keyframes color-animation {
+            0%    {color: var(--color-1)}
+            32%   {color: var(--color-1)}
+            33%   {color: var(--color-2)}
+            65%   {color: var(--color-2)}
+            66%   {color: var(--color-3)}
+            99%   {color: var(--color-3)}
+            100%  {color: var(--color-1)}
+        }
+
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff6b9d;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .heart:nth-child(3) { left: 70%; animation-delay: 2s; }
+        .heart:nth-child(4) { left: 80%; animation-delay: 3s; }
+        .heart:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .heart:nth-child(6) { left: 30%; animation-delay: 5s; }
+        .heart:nth-child(7) { left: 60%; animation-delay: 6s; }
+        .heart:nth-child(8) { left: 40%; animation-delay: 7s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .surprise-btn {
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .surprise-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 157, 0.4);
+            animation: none;
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-sparkles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 1rem;
+            color: white;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .sparkle:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { left: 40%; animation-delay: 0.4s; }
+        .sparkle:nth-child(3) { left: 60%; animation-delay: 0.8s; }
+        .sparkle:nth-child(4) { left: 80%; animation-delay: 1.2s; }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2.5rem;
+            }
+            .surprise-btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -19,22 +208,22 @@
                     <span class="title-word title-word-4">PRIYU</span>
                 </h1>
                 <div class="floating-hearts">
-                    <div class="heart"></div>
-                    <div class="heart"></div>
-                    <div class="heart"></div>
-                    <div class="heart"></div>
-                    <div class="heart"></div>
-                    <div class="heart"></div>
-                    <div class="heart"></div>
-                    <div class="heart"></div>
+                    <div class="heart">💖</div>
+                    <div class="heart">💕</div>
+                    <div class="heart">💓</div>
+                    <div class="heart">💗</div>
+                    <div class="heart">💝</div>
+                    <div class="heart">💖</div>
+                    <div class="heart">💕</div>
+                    <div class="heart">💓</div>
                 </div>
                 <button class="surprise-btn" onclick="goToPage2()">
                     <span class="btn-text">Surprise Ahead</span>
                     <div class="btn-sparkles">
-                        <div class="sparkle"></div>
-                        <div class="sparkle"></div>
-                        <div class="sparkle"></div>
-                        <div class="sparkle"></div>
+                        <div class="sparkle">✨</div>
+                        <div class="sparkle">💫</div>
+                        <div class="sparkle">⭐</div>
+                        <div class="sparkle">🌟</div>
                     </div>
                 </button>
             </div>
