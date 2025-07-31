@@ -2,7 +2,23 @@
   "version": 2,
   "builds": [
     {
-      "src": "**/*",
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "song/**",
       "use": "@vercel/static"
     }
   ],
@@ -16,7 +32,7 @@
       "dest": "/page1.html"
     },
     {
-      "src": "/page2", 
+      "src": "/page2",
       "dest": "/page2.html"
     },
     {
@@ -28,19 +44,16 @@
       "dest": "/page4.html"
     },
     {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/song/(.*)",
+      "dest": "/song/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
     }
   ]
 } 
