@@ -290,17 +290,33 @@ function createPhotoPages() {
         
         const pageFooter = document.createElement('div');
         pageFooter.className = 'photo-page-footer';
-        pageFooter.innerHTML = `
-            <button class="photo-nav-btn" onclick="previousPhotoPage()" ${pageIndex === 0 ? 'disabled' : ''}>
-                ← Previous
-            </button>
-            <button class="photo-nav-btn" onclick="nextPhotoPage()" ${pageIndex === imageData.length - 1 ? 'disabled' : ''}>
-                Next →
-            </button>
-            <button class="photo-nav-btn back-to-message" onclick="backToMessage()">
-                ← Back to Message
-            </button>
-        `;
+        
+        // Special footer for the last photo page
+        if (pageIndex === imageData.length - 1) {
+            pageFooter.innerHTML = `
+                <button class="photo-nav-btn" onclick="previousPhotoPage()">
+                    ← Previous
+                </button>
+                <button class="photo-nav-btn go-to-contract-btn" onclick="goToContract()">
+                    💖 Go to Contract →
+                </button>
+                <button class="photo-nav-btn back-to-message" onclick="backToMessage()">
+                    ← Back to Message
+                </button>
+            `;
+        } else {
+            pageFooter.innerHTML = `
+                <button class="photo-nav-btn" onclick="previousPhotoPage()" ${pageIndex === 0 ? 'disabled' : ''}>
+                    ← Previous
+                </button>
+                <button class="photo-nav-btn" onclick="nextPhotoPage()">
+                    Next →
+                </button>
+                <button class="photo-nav-btn back-to-message" onclick="backToMessage()">
+                    ← Back to Message
+                </button>
+            `;
+        }
         
         photoPage.appendChild(pageHeader);
         photoPage.appendChild(photoGrid);
@@ -310,219 +326,25 @@ function createPhotoPages() {
         photoPages.push(photoPage);
     }
     
-    // Create Love Contract Page (last page)
-    createLoveContractPage();
+    // Contract page is now on page4.html
 }
 
-// Create Love Contract Page
-function createLoveContractPage() {
-    const photoPagesContainer = document.getElementById('photoPages');
-    
-    const contractPage = document.createElement('div');
-    contractPage.className = 'photo-page contract-page';
-    contractPage.id = 'contractPage';
-    
-    const pageHeader = document.createElement('div');
-    pageHeader.className = 'photo-page-header';
-    pageHeader.innerHTML = `
-        <div class="photo-page-number">20</div>
-        <div class="photo-page-title">Our Love Contract</div>
-    `;
-    
-    const contractContent = document.createElement('div');
-    contractContent.className = 'contract-content';
-    contractContent.innerHTML = `
-        <div class="contract-header">
-            <h2 class="contract-title">💖 Our Forever Love Contract 💖</h2>
-        </div>
-        
-        <div class="contract-body">
-            <p class="contract-intro">This is an unbreakable, lifetime contract between Priyanshi (my baby, my love, my future wife) and me (your forever and ever).</p>
-            
-            <p class="contract-section-title">By reading and accepting this, my Priyanshi agrees to:</p>
-            
-            <ul class="contract-terms">
-                <li>Love me endlessly and unconditionally for all the days of her life. ❤️</li>
-                <li>Promise to marry me one day and make our forever together come true. 💍</li>
-                <li>Stand by me in every up and down, because together we are unbeatable.</li>
-                <li>Choose me first, always and always, no matter what the world says.</li>
-                <li>Spend every lifetime loving, laughing, and living with me, because our story is endless.</li>
-                <li>Keep our hearts safe with each other and never let anything or anyone come in between us.</li>
-                <li>Seal this love with forever kisses and hugs, because distance or fights can never break us. 🤗💖</li>
-            </ul>
-            
-            <div class="penalty-section">
-                <p class="penalty-title">Penalty for breaking this contract:</p>
-                <ul class="penalty-terms">
-                    <li>Unlimited kisses and the tightest hugs to fix everything. 💞</li>
-                    <li>Saying "I love you" to me a hundred times in a row until forgiven. 😘</li>
-                </ul>
-            </div>
-            
-            <div class="signature-section">
-                <p class="signature-title">Signed:</p>
-                <p class="signature-name">Your Baby, Priyanshi ❤️</p>
-                <p class="signature-name">Your Forever, Me 💖</p>
-            </div>
-        </div>
-        
-        <div class="contract-footer">
-            <button class="accept-contract-btn" onclick="acceptContract()">
-                <span class="btn-heart">💖</span>
-                <span class="btn-text">I Accept</span>
-            </button>
-        </div>
-    `;
-    
-    const pageFooter = document.createElement('div');
-    pageFooter.className = 'photo-page-footer';
-    pageFooter.innerHTML = `
-        <button class="photo-nav-btn" onclick="previousPhotoPage()">
-            ← Previous
-        </button>
-        <button class="photo-nav-btn back-to-message" onclick="backToMessage()">
-            ← Back to Message
-        </button>
-    `;
-    
-    contractPage.appendChild(pageHeader);
-    contractPage.appendChild(contractContent);
-    contractPage.appendChild(pageFooter);
-    
-    photoPagesContainer.appendChild(contractPage);
-    photoPages.push(contractPage);
-}
-
-// Accept Contract Function
-function acceptContract() {
-    // Create heart beating animation
-    createHeartBeatAnimation();
-    
-    // Create floating hearts and kisses
-    createFloatingHearts();
-    
-    // Create extra fireworks
-    createExtraFireworks();
-    
-    // Show acceptance message
-    setTimeout(() => {
-        showAcceptanceMessage();
-    }, 2000);
-}
-
-// Create Heart Beat Animation
-function createHeartBeatAnimation() {
+// Go to Contract function
+function goToContract() {
+    // Add transition effect
     const container = document.querySelector('.diary-container');
-    
-    const heartBeat = document.createElement('div');
-    heartBeat.className = 'heart-beat-animation';
-    heartBeat.innerHTML = '💖';
-    heartBeat.style.position = 'fixed';
-    heartBeat.style.top = '50%';
-    heartBeat.style.left = '50%';
-    heartBeat.style.transform = 'translate(-50%, -50%)';
-    heartBeat.style.fontSize = '8rem';
-    heartBeat.style.zIndex = '9999';
-    heartBeat.style.animation = 'heartBeat 2s ease-in-out infinite';
-    
-    container.appendChild(heartBeat);
+    container.style.transition = 'all 0.8s ease-in-out';
+    container.style.transform = 'scale(0.8)';
+    container.style.opacity = '0';
     
     setTimeout(() => {
-        if (container.contains(heartBeat)) {
-            container.removeChild(heartBeat);
-        }
-    }, 6000);
+        window.location.href = 'page4.html';
+    }, 800);
 }
 
-// Create Floating Hearts and Kisses
-function createFloatingHearts() {
-    const container = document.querySelector('.diary-container');
-    const elements = ['💖', '💕', '💓', '💗', '💝', '😘', '💋', '💌'];
-    
-    for (let i = 0; i < 20; i++) {
-        setTimeout(() => {
-            const element = document.createElement('div');
-            element.textContent = elements[Math.floor(Math.random() * elements.length)];
-            element.style.position = 'fixed';
-            element.style.left = Math.random() * 100 + '%';
-            element.style.top = '100%';
-            element.style.fontSize = (Math.random() * 2 + 1.5) + 'rem';
-            element.style.zIndex = '9998';
-            element.style.pointerEvents = 'none';
-            element.style.animation = 'floatUp 4s ease-out forwards';
-            
-            container.appendChild(element);
-            
-            setTimeout(() => {
-                if (container.contains(element)) {
-                    container.removeChild(element);
-                }
-            }, 4000);
-        }, i * 200);
-    }
-}
+// Contract functions moved to page4.js
 
-// Create Extra Fireworks
-function createExtraFireworks() {
-    const fireworksContainer = document.getElementById('fireworks');
-    const colors = ['#ff6b9d', '#ff8fab', '#ffb3d1', '#ffd6e7', '#4CAF50', '#2196F3', '#FF9800', '#E91E63'];
-    
-    for (let i = 0; i < 100; i++) {
-        setTimeout(() => {
-            const firework = document.createElement('div');
-            firework.className = 'firework';
-            firework.style.left = Math.random() * window.innerWidth + 'px';
-            firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            firework.style.animationDelay = Math.random() * 1.5 + 's';
-            firework.style.animationDuration = (Math.random() * 1 + 2) + 's';
-            
-            const size = Math.random() * 8 + 4;
-            firework.style.width = size + 'px';
-            firework.style.height = size + 'px';
-            
-            fireworksContainer.appendChild(firework);
-            
-            setTimeout(() => {
-                if (fireworksContainer.contains(firework)) {
-                    fireworksContainer.removeChild(firework);
-                }
-            }, 4000);
-        }, i * 50);
-    }
-}
-
-// Show Acceptance Message
-function showAcceptanceMessage() {
-    const container = document.querySelector('.diary-container');
-    
-    const message = document.createElement('div');
-    message.className = 'acceptance-message';
-    message.innerHTML = `
-        <h2>💖 YES! 💖</h2>
-        <p>Priyanshi, you've made me the happiest person in the world!</p>
-        <p>Our forever begins now... 💕</p>
-    `;
-    message.style.position = 'fixed';
-    message.style.top = '50%';
-    message.style.left = '50%';
-    message.style.transform = 'translate(-50%, -50%)';
-    message.style.background = 'linear-gradient(135deg, #ff6b9d, #ff8fab)';
-    message.style.color = '#fff';
-    message.style.padding = '2rem';
-    message.style.borderRadius = '20px';
-    message.style.textAlign = 'center';
-    message.style.zIndex = '10000';
-    message.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3)';
-    message.style.animation = 'fadeInUp 1s ease-out';
-    
-    container.appendChild(message);
-    
-    setTimeout(() => {
-        if (container.contains(message)) {
-            container.removeChild(message);
-        }
-    }, 5000);
-}
+// Contract functions moved to page4.js
 
 // Show photo page with smooth animation
 function showPhotoPage(pageIndex) {
