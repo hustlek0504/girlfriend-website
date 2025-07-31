@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Girlfriend's Day, Priyanshi! 💕</title>
-    <meta http-equiv="refresh" content="0; url=page1.html">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Redirecting to your special website...</p>
+    <div class="container">
+        <!-- Welcome Page -->
+        <section class="page welcome-page" id="welcomePage">
+            <div class="welcome-content">
+                <h1 class="welcome-title">
+                    <span class="title-word title-word-1">Happy</span>
+                    <span class="title-word title-word-2">Girlfriend's</span>
+                    <span class="title-word title-word-3">Day</span>
+                    <span class="title-word title-word-4">PRIYU</span>
+                </h1>
+                <div class="floating-hearts">
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                    <div class="heart"></div>
+                </div>
+                <button class="surprise-btn" onclick="goToPage2()">
+                    <span class="btn-text">Surprise Ahead</span>
+                    <div class="btn-sparkles">
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                    </div>
+                </button>
+            </div>
+        </section>
+    </div>
+
     <script>
-        window.location.href = 'page1.html';
+        function goToPage2() {
+            window.location.href = 'page1.html';
+        }
     </script>
 </body>
 </html> 
