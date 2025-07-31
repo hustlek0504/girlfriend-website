@@ -1,0 +1,1811 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Page Styles */
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Welcome Page */
+.welcome-page {
+    text-align: center;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+.heart:nth-child(3) { left: 70%; animation-delay: 2s; }
+.heart:nth-child(4) { left: 80%; animation-delay: 3s; }
+.heart:nth-child(5) { left: 50%; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.welcome-content {
+    z-index: 2;
+    position: relative;
+}
+
+.main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.priyu-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem;
+    color: #ff6b9d;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sparkle-container {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 2rem;
+    animation: sparkle 2s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.sparkle:nth-child(1) { left: 20%; animation-delay: 0s; }
+.sparkle:nth-child(2) { left: 40%; animation-delay: 0.4s; }
+.sparkle:nth-child(3) { left: 60%; animation-delay: 0.8s; }
+.sparkle:nth-child(4) { left: 80%; animation-delay: 1.2s; }
+.sparkle:nth-child(5) { left: 50%; animation-delay: 1.6s; }
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+}
+
+.go-forward-btn {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 10px 30px rgba(255,107,157,0.3);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.6s both;
+    position: relative;
+    overflow: hidden;
+}
+
+.go-forward-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.go-forward-btn:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 50px rgba(255,107,157,0.5);
+}
+
+.go-forward-btn:hover::before {
+    left: 100%;
+}
+
+.go-forward-btn:active {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.btn-arrow {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.go-forward-btn:hover .btn-arrow {
+    transform: translateX(5px) scale(1.2);
+}
+
+.btn-arrow {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+/* Question Page */
+.question-page {
+    text-align: center;
+}
+
+.best-girlfriend-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.panda-container {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.panda {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: pandaBounce 2s ease-in-out infinite;
+}
+
+.panda-face {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    border: 4px solid #333;
+}
+
+.panda-eyes {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.eye {
+    width: 30px;
+    height: 30px;
+    background: #333;
+    border-radius: 50%;
+    position: relative;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.panda-nose {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+.panda-mouth {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    border: 3px solid #333;
+    border-top: none;
+    border-radius: 0 0 40px 40px;
+}
+
+.panda-ears {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ear {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+}
+
+@keyframes pandaBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.panda.sad .panda-mouth {
+    border-radius: 40px 40px 0 0;
+    border-bottom: none;
+    border-top: 3px solid #333;
+}
+
+.love-question {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.yes-btn, .no-btn {
+    padding: 1.5rem 3rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.yes-btn {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(76,175,80,0.3);
+}
+
+.yes-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(76,175,80,0.4);
+}
+
+.no-btn {
+    background: linear-gradient(45deg, #f44336, #d32f2f);
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(244,67,54,0.3);
+    position: relative;
+}
+
+.no-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(244,67,54,0.4);
+}
+
+.btn-heart {
+    font-size: 1.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Diary Page */
+.diary-page {
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diary-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.diary-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+    text-align: center;
+    width: 100%;
+}
+
+.diary-book {
+    position: relative;
+    width: 450px;
+    height: 600px;
+    margin: 0 auto;
+    perspective: 2000px;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diary-page-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    border-radius: 15px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 30px rgba(255,107,157,0.2);
+    cursor: pointer;
+    transform-origin: left;
+    transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #654321;
+    position: relative;
+    overflow: hidden;
+    transform: rotateY(0deg);
+}
+
+.diary-page-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.diary-page-cover:hover::before {
+    transform: translateX(100%);
+}
+
+.diary-page-cover:hover {
+    transform: rotateY(-5deg);
+}
+
+.diary-page-cover.open {
+    transform: rotateY(-180deg);
+    z-index: 1;
+}
+
+.cover-content {
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.lock-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.cover-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cover-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.sparkles {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.sparkles span {
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkles span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.sparkles span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.diary-page-message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform-origin: left;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+    display: none;
+    overflow: hidden;
+    transform: rotateY(0deg);
+}
+
+.diary-page-message.open {
+    display: block;
+    transform: rotateY(0deg);
+    z-index: 10;
+}
+
+.page-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: linear-gradient(135deg, #fff9f0, #fff);
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #ff6b9d;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ff6b9d;
+    width: 100%;
+    max-width: 350px;
+}
+
+.page-number {
+    background: #ff6b9d;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.date {
+    font-family: 'Dancing Script', cursive;
+    color: #ff6b9d;
+    font-size: 1.1rem;
+}
+
+.message-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 1rem;
+    width: 100%;
+    max-width: 350px;
+    text-align: left;
+}
+
+.message-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.diary-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: left;
+}
+
+.diary-text p {
+    margin-bottom: 1rem;
+}
+
+.signature {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid #ff6b9d;
+    text-align: right;
+}
+
+.signature p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.name {
+    font-size: 1.3rem;
+    color: #ff6b9d;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+.page-footer {
+    margin-top: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.next-page-btn {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+}
+
+.next-page-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,107,157,0.4);
+}
+
+.arrow {
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+.photo-pages-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 15;
+}
+
+.photo-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform-origin: left;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fff9f0, #fff);
+    transform: rotateY(0deg);
+}
+
+.photo-page::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #ff6b9d;
+}
+
+.photo-page.open {
+    display: flex;
+    z-index: 20;
+}
+
+.photo-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ff6b9d;
+    width: 100%;
+    max-width: 400px;
+}
+
+.photo-page-number {
+    background: #ff6b9d;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.photo-page-title {
+    font-family: 'Dancing Script', cursive;
+    color: #ff6b9d;
+    font-size: 1rem;
+}
+
+.photo-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.photo-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.photo-item:hover {
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25), 0 0 20px rgba(255,107,157,0.3);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.photo-message {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(255,107,157,0.95), rgba(255,143,171,0.95));
+    color: #fff;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    transform: translateY(100%);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.photo-item:hover .photo-message {
+    transform: translateY(0);
+}
+
+.photo-message-section {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255,107,157,0.1), rgba(255,143,171,0.1));
+    border-radius: 15px;
+    border: 2px solid rgba(255,107,157,0.3);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+}
+
+.photo-message-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    color: #ff6b9d;
+    margin: 0;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.photo-page-footer {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.photo-nav-btn {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+    min-width: 120px;
+}
+
+.photo-nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255,107,157,0.4);
+}
+
+.photo-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.back-to-message {
+    background: linear-gradient(45deg, #ff8fab, #ffb3d1) !important;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 200px;
+}
+
+.go-to-contract-btn {
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab) !important;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+    margin: 0 10px;
+}
+
+.go-to-contract-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+    animation: none;
+}
+
+@keyframes pageFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes pageFlipReverse {
+    0% {
+        transform: rotateY(-180deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15), 0 0 30px rgba(255,107,157,0.4);
+    }
+}
+
+@keyframes sparkleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.5);
+    }
+}
+
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.firework {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    animation: firework 2s ease-out forwards;
+}
+
+@keyframes firework {
+    0% {
+        transform: translateY(100vh) scale(0) rotate(0deg);
+        opacity: 1;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.love-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.love-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.message-card {
+    background: rgba(255,255,255,0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.message-card h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.message-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.signature {
+    border-top: 2px solid #ff6b9d;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.signature p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    color: #ff6b9d;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+.gallery-section {
+    margin-top: 4rem;
+}
+
+.gallery-section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background: rgba(255,255,255,0.95);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.photo-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: #fff;
+    border-radius: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255,107,157,0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.gallery-item:hover .photo-message {
+    transform: translateY(0);
+    box-shadow: 0 6px 20px rgba(255,107,157,0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleFloat {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .priyu-title {
+        font-size: 4rem;
+    }
+    
+    .best-girlfriend-title {
+        font-size: 2rem;
+    }
+    
+    .love-question {
+        font-size: 2rem;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .yes-btn, .no-btn {
+        width: 200px;
+    }
+    
+    .panda {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .panda-face {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .eye {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .ear {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .message-card {
+        margin: 0 1rem 3rem 1rem;
+        padding: 2rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading animation */
+.container {
+    animation: fadeIn 1s ease-out;
+} 
+
+/* Contract Page Styles */
+.contract-page {
+    background: linear-gradient(135deg, #fff9f0, #fff);
+    padding: 2rem;
+}
+
+.contract-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contract-header {
+    margin-bottom: 2rem;
+}
+
+.contract-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #ff6b9d;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.contract-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    border: 2px solid rgba(255,107,157,0.3);
+    margin-bottom: 1rem;
+}
+
+.contract-intro {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.contract-section-title {
+    font-weight: bold;
+    color: #ff6b9d;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contract-terms {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.contract-terms li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,107,157,0.2);
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contract-terms li:last-child {
+    border-bottom: none;
+}
+
+.penalty-section {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255,107,157,0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255,107,157,0.3);
+}
+
+.penalty-title {
+    font-weight: bold;
+    color: #ff6b9d;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.penalty-terms {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.penalty-terms li {
+    padding: 0.3rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.signature-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(255,107,157,0.3);
+}
+
+.signature-title {
+    font-weight: bold;
+    color: #ff6b9d;
+    margin-bottom: 0.5rem;
+}
+
+.signature-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    color: #ff6b9d;
+    margin: 0.3rem 0;
+}
+
+.contract-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.accept-contract-btn {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    box-shadow: 0 8px 25px rgba(255,107,157,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.accept-contract-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.accept-contract-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(255,107,157,0.5);
+}
+
+.accept-contract-btn:hover::before {
+    left: 100%;
+}
+
+.accept-contract-btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-heart {
+    font-size: 1.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Heart Beat Animation */
+@keyframes heartBeat {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    75% {
+        transform: translate(-50%, -50%) scale(1.3);
+    }
+}
+
+/* Floating Hearts Animation */
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(50vh) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.8);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Acceptance Message */
+.acceptance-message {
+    font-family: 'Dancing Script', cursive;
+    animation: fadeInUp 1s ease-out;
+}
+
+.acceptance-message h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.acceptance-message p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+} 
+
+/* Page 4 - Love Contract Main Styles */
+.contract-page-main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contract-main-container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.contract-wrapper {
+    background: linear-gradient(135deg, #fff9f0, #fff);
+    border-radius: 25px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 30px rgba(255,107,157,0.2);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid rgba(255,107,157,0.3);
+}
+
+.contract-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.8s ease;
+}
+
+.contract-wrapper:hover::before {
+    transform: translateX(100%);
+}
+
+.contract-header-main {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid rgba(255,107,157,0.3);
+}
+
+.contract-main-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #ff6b9d;
+    margin: 0 0 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: glow 3s ease-in-out infinite;
+}
+
+.contract-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #ff8fab;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.contract-body-main {
+    margin-bottom: 3rem;
+}
+
+.contract-intro-main {
+    background: rgba(255,107,157,0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 2px solid rgba(255,107,157,0.2);
+}
+
+.contract-intro-main p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.contract-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ff6b9d;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.contract-terms-main {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contract-terms-main li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    border-left: 4px solid #ff6b9d;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.contract-terms-main li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(255,107,157,0.3);
+}
+
+.penalty-section-main {
+    background: rgba(255,107,157,0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2.5rem;
+    border: 2px solid rgba(255,107,157,0.3);
+}
+
+.penalty-title-main {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+    color: #ff6b9d;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.penalty-terms-main {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.penalty-terms-main li {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 8px;
+    color: #666;
+    font-size: 0.95rem;
+    text-align: center;
+    border-left: 3px solid #ff8fab;
+}
+
+.signature-section-main {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    border: 2px solid rgba(255,107,157,0.3);
+}
+
+.signature-title-main {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #ff6b9d;
+    margin-bottom: 1.5rem;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.signature-name-main {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    color: #ff6b9d;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background: rgba(255,107,157,0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255,107,157,0.3);
+}
+
+.accept-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.accept-contract-btn-main {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(255,107,157,0.4);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Dancing Script', cursive;
+}
+
+.accept-contract-btn-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.8s ease;
+}
+
+.accept-contract-btn-main:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(255,107,157,0.6);
+}
+
+.accept-contract-btn-main:hover::before {
+    left: 100%;
+}
+
+.accept-contract-btn-main:active {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.btn-heart-main {
+    font-size: 2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.btn-text-main {
+    font-weight: bold;
+}
+
+.btn-sparkle {
+    font-size: 1.5rem;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Floating Hearts */
+.floating-heart {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: floatUp 6s ease-in-out infinite;
+    z-index: 5;
+}
+
+/* Heart Beat Animation */
+@keyframes massiveHeartBeat {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: drop-shadow(0 0 20px rgba(255,107,157,0.8));
+    }
+    25% {
+        transform: translate(-50%, -50%) scale(1.3);
+        filter: drop-shadow(0 0 30px rgba(255,107,157,1));
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        filter: drop-shadow(0 0 25px rgba(255,107,157,0.9));
+    }
+    75% {
+        transform: translate(-50%, -50%) scale(1.4);
+        filter: drop-shadow(0 0 35px rgba(255,107,157,1));
+    }
+}
+
+/* Heart Explosion Animation */
+@keyframes heartExplosion {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8) translate(var(--x), var(--y));
+    }
+}
+
+.explosion-heart {
+    --x: calc((random() - 0.5) * 200px);
+    --y: calc((random() - 0.5) * 200px);
+}
+
+/* Acceptance Message */
+.acceptance-message-main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+    color: #fff;
+    padding: 3rem;
+    border-radius: 25px;
+    text-align: center;
+    z-index: 10000;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease-out;
+    font-family: 'Dancing Script', cursive;
+}
+
+.acceptance-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.acceptance-text {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.acceptance-hearts {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.acceptance-hearts span {
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.acceptance-hearts span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.acceptance-hearts span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.acceptance-hearts span:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.acceptance-hearts span:nth-child(5) {
+    animation-delay: 2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contract-wrapper {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .contract-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .contract-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .accept-contract-btn-main {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.3rem;
+    }
+    
+    .acceptance-title {
+        font-size: 3rem;
+    }
+    
+    .acceptance-text {
+        font-size: 1.2rem;
+    }
+} 
